@@ -1,0 +1,13 @@
+<ul>
+    <% @articles.each do |article|%>
+        <li> <%= article.title %>
+        <br>
+        <%= article.description %>
+        <br>
+        <%= link_to 'Delete', article_path(article), method: :delete %>
+        <br>
+        <%= link_to 'Show', article_path(article) %>
+        <hr>
+        </li>
+    <%end%>
+</ul>

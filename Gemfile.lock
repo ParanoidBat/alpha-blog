@@ -203,7 +203,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  bootsnap (>= 1.4.4)
+  bootsnap
   byebug
   capybara (>= 3.26)
   jbuilder (~> 2.7)

@@ -4,10 +4,13 @@
         <br>
         <%= article.description %>
         <br>
-        <%= link_to 'Delete', article_path(article), method: :delete %>
+        <%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Ya sho mate?"} %>
         <br>
         <%= link_to 'Show', article_path(article) %>
         <hr>
         </li>
     <%end%>
+
+    <%= link_to 'Create New', new_article_path %>
+
 </ul>

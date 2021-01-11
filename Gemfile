@@ -55,6 +55,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'bootsnap', '>= 1.4.4', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

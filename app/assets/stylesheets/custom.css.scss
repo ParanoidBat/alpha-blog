@@ -1,0 +1,38 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+html, body{
+    height: 100%;
+}
+
+#sticky-footer{
+    flex-shrink: none;
+}
+
+#page-content{
+    flex: 1 0 auto;
+    background-color: lightgray;
+}
+
+.navbar {
+    background-color: black !important;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+#logo {
+    font-size: 1.7em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+#home-container{
+    margin-top: 25px;
+}
+
+.card-body{
+    background-color: gray;
+}

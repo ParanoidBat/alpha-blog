@@ -1,8 +1,26 @@
-<h1> Show page </h1>
+<h2 class="text-center my-4"> <%= @article.title %></h2>
 
-<p><%= @article.title %>  </p>
-<p> <%= @article.description %> </p>
-<br>
-<%= link_to 'Edit', edit_article_path(@article)%> |
-<%= link_to 'Back', articles_path %> |
-<%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Ya sho mate?"} %>
+<div class="container">
+
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="card text-center shadow mb-5 bg-white rounded">
+                <div class="card-header font-italic">
+                By
+                </div>
+                
+                <div class="card-body bg-light">
+                <div class="card-text text-left"> <%= simple_format(@article.description) %> </div>
+                
+                <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-primary" %>
+                <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Ya sho mate?"}, class: "btn btn-outline-danger" %>
+                </div>
+                
+                <div class="card-footer text-muted">
+                    <small>Created <%= time_ago_in_words(@article.created_at) %> ago,
+                    Edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

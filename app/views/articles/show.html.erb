@@ -21,6 +21,7 @@
                     Edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
                 </div>
             </div>
+            <%= link_to 'To Articles', articles_path, class: "text-decoration-none text-dark" %>
         </div>
     </div>
 </div>

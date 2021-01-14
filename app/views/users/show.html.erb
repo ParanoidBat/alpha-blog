@@ -1,0 +1,13 @@
+<h1 class="text-center my-4"> <%= @user.username %>'s Profile </h1>
+
+<div class="text-center mt-4">
+    <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-outline-primary" %>
+</div>
+
+<h3 class="text-center mt-4">Articles</h3>
+
+<%= render 'articles/article' %>
+
+<div class="text-center m-3">
+    <%= link_to 'All Bloggers', users_path, class: "text-decoration-none" %>
+</div>

@@ -13,7 +13,10 @@
                 <p class="card-text"> <%= truncate(article.description, length: 100) %> </p>
     
                 <%= link_to 'View', article_path(article), class: "btn btn-outline-success" %>
+
+                <% if logged_in? && current_user == article.user %>
                 <%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Ya sho mate?"}, class: "btn btn-outline-danger" %>
+                <% end %>
                 </div>
                 
                 <div class="card-footer text-muted">

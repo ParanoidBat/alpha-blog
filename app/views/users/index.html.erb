@@ -14,7 +14,11 @@
                 <p class="card-text"> Blogs Posted: <%= user.articles.count %> </p>
     
                 <%= link_to 'View Profile', user, class: "btn btn-outline-success" %>
+
+                <% if logged_in? && user == current_user %>
                 <%= link_to 'Edit Profile', edit_user_path(user), class: "btn btn-outline-danger" %>
+                <% end %>
+
                 </div>
                 
                 <div class="card-footer text-muted">

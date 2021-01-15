@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
     before_action :set_article, only: [:show, :edit, :update, :destroy]
 
     def home
+        redirect_to articles_path if logged_in?
     end
 
     def show
@@ -20,7 +21,7 @@ class ArticlesController < ApplicationController
 
     def create
         @article = Article.new(article_params)
-        @article.user = User.first
+        @article.user = current_user
         
         if @article.save
             flash[:notice] = "New article created!"

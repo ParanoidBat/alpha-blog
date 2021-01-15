@@ -28,7 +28,7 @@
 
           <% else %>
           <li class="nav-item">
-            <%= link_to current_user.username, current_user, class: "nav-link" %>
+            <%= "Admin" if current_user.admin? %> <%= link_to current_user.username, current_user, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= button_to 'Delete Account', user_path(current_user), method: :delete, data: {confirm: "Heh! Noob! You afraid?"}, class: "nav-link btn_to_link" %>

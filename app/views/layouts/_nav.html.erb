@@ -10,11 +10,28 @@
             <%= link_to 'Articles', articles_path, class: "nav-link active" %>
           </li>
           <li class="nav-item">
-            <%= link_to 'New', new_article_path, class: "nav-link" %>
+            <%= link_to 'New Article', new_article_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to 'Bloggers', users_path, class: "nav-link" %>
           </li>
+
+          <% if not logged_in? %>
+            <li class="nav-item">
+              <%= link_to 'Login', login_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Sign Up', signup_path, class: "nav-link" %>
+            </li>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to current_user.username, current_user, class: "nav-link" %>
+          </li>
+            <li class="nav-item">
+              <%= button_to 'Logout', logout_path, method: :delete, class: "nav-link btn_to_link" %>
+            </li>
+          <% end %>
+
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

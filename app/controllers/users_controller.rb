@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
     def destroy
         @user.destroy
-        session[:user_id] = nil
+        session[:user_id] = nil if current_user == @user
 
         flash[:notice] = "Account deleted"
 
